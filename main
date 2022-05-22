@@ -1,0 +1,109 @@
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{CambridgeUS}
+
+% Title page details: 
+\title{Assignment 5} 
+\author{Kummitha Jhanavi (CS21BTECH11032}
+\date{\today}
+\logo{\large \LaTeX{}}
+
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Remove logo from the next slides
+\logo{}
+
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+
+% Blocks frame
+\section{Problem Statement}
+\begin{frame}{Problem Statement}
+    \begin{block}{Question}
+        Three switches connected in parallel operate independently. Each switch remains closed with probability p.
+        (a) Find the probability of receiving an input signal at the output.(b) Find the probability that switch $S_{1}$ is  open  given that an input signal is received at the output.
+    \end{block}
+\end{frame} 
+\section{Figure}
+\begin{frame}{Figure}
+\begin{block}{figure}
+\begin{figure}
+    \centering
+    \includegraphics{Screenshot (34).png}[\width=\linewidth]
+    \caption{Figure 1}
+    \label{fig:my_label}
+\end{figure}
+    
+\end{block}
+    
+\end{frame}
+\section{Solution}
+\begin{frame}{Solution (a) }
+\begin{block}
+ Let $A_{i}$ = "Switch $S_{i}$ is closed." then P($A_{i}$) = p, i=1,2,3.
+ 
+ Since switches operate independently, we have
+ \begin{center}
+     P($A_{i}A_{j}$) = P($A_{i}$)P($A_{j}$)
+ \end{center}
+ \begin{center}
+  Similarly ,   P($A_{1}A_{2}A_{3}$) = P($A_{1}$)P($A_{2}$)P($A_{3}$)
+ \end{center}
+ Let R represents the event "Input signal is received at the output"
+ \begin{center}
+     R= $A_{1}\cup A_{2}\cup A_{3}
+ \end{center}
+ \begin{center}
+    P(R) = 1-P(R$\overline$)=1-P($\overline A_{1}\overline A_{2}\overline A_{3}\overline$)=
+    1-P($\overline A_{1}$)P($\overline A_{2}$)P($\overline A_{3}$) 
+    
+    =1- (1-p)^3 = 3p-3p^2+p^3
+    
+ \end{center}
+ (b).
+ We need P($\frac{\overline A_{1}}{R}$).From Bayes theorem
+ 
+P($\frac{\overline A_{1}}{R}$)=$\frac{P(R/\overline A_{1})P(\overline A_{1})}{P(R)}$=$\frac{(2p-p^2)(1-p)}{3p-3p^2+p^3}$=$\frac{2-3p+p^2}{3-3p+p^2}$.
+\end{block}
+    
+\end{frame}
+
+\end{Solution}
+\section{conclusion}
+\begin{frame}{Conclusion}
+\begin{block}
+
+Because of the symmetry of the switches, we also have
+
+P($\frac{\overline A_{1}}{R}$)=P($\frac{\overline A_{2}}{R}$)=P($\frac{\overline A_{3}}{R}$)
+ 
+\end{block}
+    
+\end{frame}
+
+
+
+
+
+
+\end{document}
